@@ -1,0 +1,334 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    ThirdWindow:
+    FourthWindow:
+    FifthWindow:
+    SixthWindow:
+    TextWindow:
+    FirstButton
+    SecondWindowDepression:
+
+<MainWindow>:
+    name: "main"
+    BoxLayout:
+        orientation: "horizontal"
+        Image:
+            pos: self.pos
+            size: self.size
+            source: "C:/Users/abhis/Desktop/New folder/back.png"
+            anim_delay: 0.05
+            allow_stretch: True
+
+
+    FloatLayout:
+        Image:
+            source: "C:/Users/abhis/Desktop/New folder/aniw.png"
+            pos_hint: {'x': .26, 'y': .6}
+            allow_stretch: True
+            size_hint: .5, .2
+        Button:
+            background_color: 0, 0, 0, 0
+            pos_hint: {'x': .26, 'y': .6}
+            size_hint: .5, .2
+            on_release:
+                app.root.current = "second"
+                root.manager.transition.direction = "left"
+
+        Image:
+            source: "C:/Users/abhis/Desktop/New folder/depw.png"
+            pos_hint: {'x': .26, 'y': .2}
+            allow_stretch: True
+            size_hint: .5, .2
+
+        Button:
+            background_color: 0, 0, 0, 0
+            pos_hint: {'x': .26, 'y': .2}
+            size_hint: .5, .2
+            on_release:
+                app.root.current = "second1"
+                root.manager.transition.direction = "up"
+
+
+
+<SecondWindow>
+    name: "second"
+
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "How bad is/was your attack."
+            color: 1, 1, 1, 1
+
+        Button:
+            text: "1"
+            background_color: 0, 1, 0, 1
+            on_release:
+                app.root.current = "firstbutton"
+                root.manager.transition.direction = "right"
+
+        Button:
+            text: "2"
+            background_color: 0, 1, 0, 1
+        Button:
+            text: "3"
+            background_color: 0, 1, 0, 1
+        Button:
+            text: "4"
+            background_color: 1, 1, 0.204, 1
+        Button:
+            text: "5"
+            background_color: 1, 1, 0.204, 1
+        Button:
+            text: "6"
+            background_color: 1, 1, 0.204, 1
+        Button:
+            text: "7"
+            background_color: 1, 0.502, 0, 1
+
+        Button:
+            text: "8"
+            background_color: 1, 0.502, 0, 1
+
+        Button:
+            text: "9"
+            background_color: 1, 0.502, 0, 1
+
+        Button:
+            text: "10"
+            background_color: 1, 0, 0, 1
+            on_release:
+                app.root.current = "third"
+
+        Button:
+            text: "Back"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+<FirstButton>
+    name:"firstbutton"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        Label:
+            size_hint: 1, 1.5
+            text_size: self.size
+            valign: "middle"
+            halign: "center"
+            text: "Breath in for 5 seconds and breath out for 5 seconds. \nBreath in for 5 seconds and breath out for 5 seconds. \nBreath in for 5 seconds and breath out for 5 seconds. \nBreath in for 5 seconds and breath out for 5 seconds. \nGo to our text feature for more help."
+            color: 0, 0, 0, 1
+
+        Button:
+            text: "CALL 911"
+            background_color: 1, 0, 0, 1
+            size_hint: 0.5, 0.3
+        Button:
+            text: "Back"
+            pos_hint:{"x": 0.5,}
+            size_hint: 0.5, 0.3
+            on_release:
+                app.root.current = "second"
+                root.manager.transition.direction = "right"
+
+<SecondWindowDepression>
+    name: "second1"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: "vertical"
+        Button:
+            text: "Suicidal Thoughts"
+            background_color: 1, 0, 0, 1
+            on_release:
+                app.root.current = "Fourth"
+                root.manager.transition.direction = "right"
+
+
+        Button:
+            text: "Are you taking/interested in drugs"
+            background_color: 1, 0, 0, 1
+            on_release:
+                app.root.current = "Fifth"
+                root.manager.transition.direction = "right"
+
+
+        Button:
+            text: "Are you reacting negatively to situations that didn't used to bother you?"
+            background_color: 1, 0, 0, 1
+            on_release:
+                app.root.current = "Sixth"
+                root.manager.transition.direction = "right"
+
+        Button:
+            text: "TEXT"
+            background_color: 1, 0, 0, 1
+            on_release:
+                app.root.current = "TextWindow"
+                root.manager.transition.direction = "down"
+
+        Button:
+            text: "BACK"
+            background_color: 1, 0, 0, 1
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "down"
+
+
+
+<ThirdWindow>
+    name: "third"
+
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        Label:
+            text: "CALL 911 IMMDEDIATLY OR GO TO THE EMERGENCY ROOM NOW!!"
+            color: 0, 0, 0, 1
+            size_hint: 1, 1.5
+
+        Button:
+            text: "CALL 911"
+            background_color: 1, 0, 0, 1
+            size_hint: 0.5, 0.3
+        Button:
+            text: "Back"
+            pos_hint:{"x": 0.5,}
+            size_hint: 0.5, 0.3
+            on_release:
+                app.root.current = "second"
+                root.manager.transition.direction = "right"
+<FourthWindow>
+    name:"Fourth"
+
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        Label:
+            size_hint: 1, 1.5
+            text_size: self.size
+            valign: "middle"
+            halign: "center"
+            text: "First Call 1-800-273-8255 and talk to them about what you're going through and why your having these thoughts. \n\nIf you still want to talk about it, you should open up to a friend or family member if you haven't already done so."
+            color: 0, 0, 0, 1
+
+
+
+        Button:
+            text: "1-800-273-8255"
+            background_color: 1, 0, 0, 1
+            size_hint: 0.5, 0.3
+        Button:
+            text: "Back"
+            pos_hint:{"x": 0.5,}
+            size_hint: 0.5, 0.3
+            on_release:
+                app.root.current = "second1"
+                root.manager.transition.direction = "left"
+<FifthWindow>
+    name:"Fifth"
+
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        Label:
+            size_hint: 1, 1.5
+            text_size: self.size
+            valign: "middle"
+            halign: "center"
+            text: "1) Talk with an adult you trust and open up about why you've been using drugs. \n\n2) If you think you're addicted or are having trouble because of the drugs, talk to a professional. \n\n(If you want to, you can keep the conversation confidential.)"
+            color: 0, 0, 0, 1
+
+    Button:
+        text: "Back"
+        pos_hint:{"x": 0}
+        size_hint: 1, 0.3
+        on_release:
+            app.root.current = "second1"
+            root.manager.transition.direction = "left"
+
+<SixthWindow>
+    name:"Sixth"
+
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        Label:
+            size_hint: 1, 1.5
+            text_size: self.size
+            valign: "middle"
+            halign: "center"
+            text: "Talk to a therapist or someone else professional about why you're behaving like this and what could be causing you to behave this way. \n\nIf you can't meet anyone professional, then talk to a friend or a family member about these things."
+            color: 0, 0, 0, 1
+
+    Button:
+        text: "Back"
+        pos_hint:{"x": 0}
+        size_hint: 1, 0.3
+        on_release:
+            app.root.current = "second1"
+            root.manager.transition.direction = "left"
+
+<TextWindow>
+    name:"TextWindow"
+    last_name_text_input: last_name
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                size_hint: 1, 1.5
+                text_size: self.size
+                valign: "middle"
+                halign: "left"
+                text: "Enter what you are facing:"
+
+            TextInput:
+                id: last_name
+                multinline:False
+
+            Label:
+                text: "Response"
+
+            TextInput:
+                multiline: False
+        Button:
+            text:"Submit"
+            on_press: root.entity_text()
+
+        Button:
+            text: "Back"
+            on_release:
+                app.root.current = "second1"
+                root.manager.transition.direction = "left"
+
+
+
